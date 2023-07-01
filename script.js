@@ -41,18 +41,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound(getPlayerChoice(), getComputerChoice()));
-    }
-    if (playerScore > computerScore) {
-        console.log("You win the game!!!")
-        console.log(`Player score: ${playerScore}`);
-        console.log(`Computer score: ${computerScore}`);
-    } else {
-        console.log("You lose the game :(")
-        console.log(`Player score: ${playerScore}`);
-        console.log(`Computer score: ${computerScore}`);
-    }
+    console.log(playRound(getPlayerChoice(), getComputerChoice()));
+
+    //if (playerScore > computerScore) {
+        //console.log("You win the game!!!")
+        //console.log(`Player score: ${playerScore}`);
+        //console.log(`Computer score: ${computerScore}`);
+    //} else {
+        //console.log("You lose the game :(")
+        //console.log(`Player score: ${playerScore}`);
+        //console.log(`Computer score: ${computerScore}`);
+    //}
 }
 
 game()
