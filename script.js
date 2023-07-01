@@ -40,23 +40,53 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+function setScoreText() {
+    const pscore = document.getElementById("pscore");
+    const cscore = document.getElementById("cscore");
+    pscore.textContent = `Player score: ${playerScore}`
+    cscore.textContent = `Computer score: ${computerScore}`
+}
+
+function checkOutcome() {
+    const outcome = document.getElementById("outcome");
+
+    if (playerScore === 5 && computerScore === 5) {
+        outcome.textContent = "Draw!";
+    }
+    else if (playerScore === 5 && computerScore < 5) {
+        outcome.textContent = "You Win!";
+    }
+    else if (playerScore < 5 && computerScore === 5) {
+        outcome.textContent = "You lose!";
+    }
+}
+
 function game() {
     //console.log(playRound(getPlayerChoice(), getComputerChoice()));
 
     const rock = document.getElementById("btn1");
     rock.addEventListener("click", function() {
         console.log(playRound(getPlayerChoice("rock"), getComputerChoice()));
+        setScoreText();
+        checkOutcome();
     });
     
     const paper = document.getElementById("btn2");
     paper.addEventListener("click", function() {
         console.log(playRound(getPlayerChoice("paper"), getComputerChoice()));
+        setScoreText();
+        checkOutcome();
     });
 
     const scissors = document.getElementById("btn3");
     scissors.addEventListener("click", function() {
         console.log(playRound(getPlayerChoice("scissors"), getComputerChoice()));
+        setScoreText()
+        checkOutcome();
     });
+
+
     
 
     //if (playerScore > computerScore) {
